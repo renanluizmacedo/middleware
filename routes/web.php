@@ -15,5 +15,4 @@ use App\Http\Middleware\PrimeiroMiddleware;
 |
 */
 
-Route::get('/usuarios',[UsuarioControlador::class, 'index'])
-    ->middleware([PrimeiroMiddleware::class]);
+Route::get('/usuarios',[UsuarioControlador::class, 'index']);
