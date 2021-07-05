@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class PrimeiroMiddleware
+class SegundoMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,8 +17,8 @@ class PrimeiroMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        Log::debug('Passou pelo primeiro middleware');
-        //return $next($request);
-        return response('Parando cadeia de chamadas');
+        Log::debug('Passou pelo segundo middleware');
+
+        return $next($request);
     }
 }

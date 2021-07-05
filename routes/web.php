@@ -15,7 +15,8 @@ use App\Http\Middleware\PrimeiroMiddleware;
 |
 */
 
-Route::get('/usuarios',[UsuarioControlador::class, 'index']);
-Route::get('/teste',function(){
-    return 'teste';
-});
+Route::get('/usuarios',[UsuarioControlador::class, 'index'])->middleware('primeiro','segundo');
+
+Route::get('/terceiro',function(){
+    return 'Passou pelo terceiro middleware';
+})->middleware('terceiro:renan,20');
